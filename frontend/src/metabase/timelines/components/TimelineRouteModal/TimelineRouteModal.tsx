@@ -4,10 +4,10 @@ import { Route } from "react-router";
 import Modal from "metabase/components/Modal";
 
 export interface TimelineRouteModalProps {
-  route: Route;
-  location: Location;
+  route?: Route;
+  location?: Location;
   children?: ReactNode;
-  onClose?: (route: Route, location: Location) => void;
+  onClose?: (route?: Route, location?: Location) => void;
 }
 
 const TimelineRouteModal = ({
