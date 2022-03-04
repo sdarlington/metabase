@@ -1,0 +1,7 @@
+{:paths
+ ["src" "resources"]
+
+ :deps
+ {org.apache.ignite/ignite-core {:mvn/version "2.11.0"}}
+ }
+

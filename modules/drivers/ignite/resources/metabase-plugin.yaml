@@ -1,0 +1,33 @@
+info:
+  name: Metabase Apache Ignite JDBC Driver
+  version: 0.0.1
+  description: Allows Metabase to connect to Apache Ignite databases using the thin JDBC driver
+driver:
+  name: ignite
+  display-name: Apache Ignite
+  lazy-load: true
+  parent: sql-jdbc
+  connection-properties:
+    - host
+    - merge:
+        - port
+        - default: 10800
+    - name: schema
+      display-name: Schema (optional)
+      helper-text: Only add tables to Metabase that come from a specific schema.
+      placeholder: PUBLIC
+      required: false
+    - merge:
+        - user
+        - required: false
+    - merge:
+        - password
+        - required: false
+    - ssl
+init:
+  - step: load-namespace
+    namespace: metabase.driver.ignite
+  - step: load-namespace
+    namespace: metabase.driver.ignite
+  - step: register-jdbc-driver
+    class: org.apache.ignite.IgniteJdbcThinDriver
