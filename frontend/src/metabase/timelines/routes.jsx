@@ -1,7 +1,7 @@
 import React from "react";
 import { IndexRoute, Route } from "react-router";
-import TimelineRouteModal from "./components/TimelineRouteModal";
 import TimelineIndexModal from "./containers/TimelineIndexModal";
+import TimelineRouteModal from "./containers/TimelineRouteModal";
 
 const getRoutes = () => {
   return (
